@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thực đơn | Thế Giới Đồ Ăn</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brand-icon">🍚</span><div><b>Thế Giới Đồ Ăn</b><small>Ngon như cơm nhà</small></div></div>
+  <nav><a href="index.html">Trang chủ</a><a class="active" href="menu.html">Thực đơn</a><a href="order-tracking.html">📦 Theo dõi đơn</a><a href="cart.html">🛒 Giỏ hàng <span id="cartCount">0</span></a></nav>
+</header>
+<main class="container menu-page">
+  <div class="menu-title"><div><span class="pill">MENU ONLINE</span><h1>Thực đơn hôm nay</h1><p>Chọn món ăn hoặc đồ uống. Các nhóm được chia rõ ràng, ảnh đồng đều và tối ưu cho điện thoại.</p></div>
+  <a class="btn cart-btn" href="cart.html">🛒 Xem giỏ hàng</a></div>
+  <div class="toolbar">
+    <div class="search"><span>⌕</span><input id="search" placeholder="Tìm món ăn, đồ uống..."></div>
+    <div class="filters" id="filters"></div>
+  </div>
+  <div id="products"></div>
+</main>
+<div class="toast" id="toast"></div>
+<script src="data.js"></script><script src="script.js"></script>
+<script>
+const productsEl=document.getElementById('products'), searchEl=document.getElementById('search'), filtersEl=document.getElementById('filters');
+let cat='all';
+const cats=['all','Cơm','Bún','Phở','Bánh mì','Miến','Mì','Xôi','Món cuốn & chiên','Món đặc sản','Chè','Trà sữa','Trà trái cây','Đá xay','Kem','Nước giải khát'];
+const labels={all:'🍽️ Tất cả','Cơm':'🍚 Cơm','Bún':'🍜 Bún','Phở':'🍲 Phở','Bánh mì':'🥖 Bánh mì','Miến':'🍜 Miến','Mì':'🍜 Mì','Xôi':'🍚 Xôi','Món cuốn & chiên':'🥟 Cuốn & chiên','Món đặc sản':'⭐ Đặc sản','Chè':'🍨 Chè','Trà sữa':'🧋 Trà sữa','Trà trái cây':'🍓 Trà trái cây','Đá xay':'🥤 Đá xay','Kem':'🍦 Kem','Nước giải khát':'🥤 Nước giải khát'};
+filtersEl.innerHTML=cats.map(x=>`<button class="filter ${x==='all'?'active':''}" data-cat="${x}">${labels[x]}</button>`).join('');
+function refresh(){
+ const q=searchEl.value.toLowerCase().trim();
+ let list=PRODUCTS.filter(p=>(cat==='all'||p.category===cat||(false))&&(!q||p.name.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q)));
+ renderGroupedMenu(list,productsEl,cat==='all');
+}
+document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');cat=b.dataset.cat;refresh();});
+searchEl.oninput=refresh; refresh(); updateCartCount();
+</script>
+</body></html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Thế Giới Đồ Ăn - đặt món trực tiếp, giao tận nơi tại Vĩnh Hưng, Hoàng Mai, Hà Nội.">
+<title>Thế Giới Đồ Ăn  | Đặt món trực tiếp</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="showcase-page">
+<header class="showcase-topbar">
+  <a class="showcase-brand" href="index.html" aria-label="Thế Giới Đồ Ăn">
+    <span class="brand-bowl">🍚</span>
+    <span><b>Thế Giới Đồ Ăn</b><strong></strong></span>
+  </a>
+  <nav class="showcase-nav">
+    <a class="active" href="index.html">Trang chủ</a>
+    <a href="#menu-showcase">Thực đơn</a>
+    <a href="#about">Giới thiệu</a>
+    <a href="#address">Địa chỉ</a>
+    <a href="order-tracking.html">Theo dõi đơn</a>
+    <a href="#contact">Liên hệ</a>
+  </nav>
+  <div class="showcase-actions">
+    <div class="showcase-search"><span>⌕</span><input id="homeSearch" placeholder="Tìm kiếm món ăn, đồ uống..." aria-label="Tìm kiếm"></div>
+    <a class="showcase-cart" href="cart.html">🛒<span id="cartCount">0</span></a>
+    <a class="order-now" href="menu.html">Đặt món ngay</a>
+  </div>
+</header>
+
+<main>
+  <section class="showcase-title">
+    <span>🍴</span><h1>THỰC ĐƠN</h1><em>Ngon – Sạch – Chuẩn vị nhà làm</em><span>♡</span>
+  </section>
+
+  <section class="container showcase-section best-section">
+    <div class="showcase-section-head"><h2>🔥 MÓN BÁN CHẠY</h2><a href="menu.html">Xem tất cả →</a></div>
+    <div id="bestProducts" class="showcase-grid best-grid"></div>
+  </section>
+
+  <section id="menu-showcase" class="container showcase-section">
+    <div class="showcase-section-head"><h2>🍽️ THỰC ĐƠN THEO CHỦ ĐỀ</h2><a href="menu.html">Tìm kiếm & lọc món →</a></div>
+    <div class="showcase-toolbar">
+      <div class="search showcase-full-search"><span>⌕</span><input id="showcaseSearch" placeholder="Tìm món ăn, đồ uống..." aria-label="Tìm món"></div>
+      <div id="showcaseFilters" class="filters"></div>
+    </div>
+    <div id="showcaseProducts"></div>
+  </section>
+
+  <section id="about" class="showcase-info container">
+    <div class="info-card"><span class="info-icon">🍚</span><div><h2>Về Thế Giới Đồ Ăn</h2><p>Các món ăn Việt quen thuộc, nấu nóng mỗi ngày, đặt trực tiếp trên website và giao tận nơi quanh khu vực Vĩnh Hưng – Hoàng Mai.</p></div></div>
+    <div id="contact" class="info-card"><span class="info-icon">📞</span><div><h2>Liên hệ đặt món</h2><p><a href="tel:0904956291">0904 956 291</a> · 09:00–15:00 và 17:00–22:00.</p><a class="small-order" href="menu.html">🍚 Đặt món ngay</a></div></div>
+  </section>
+
+  <section id="address" class="showcase-contact container">
+    <div class="address-card">
+      <div><span class="mini-label">📍 ĐỊA CHỈ QUÁN</span><h2>Số 110, Ngõ 179 Vĩnh Hưng, Hoàng Mai, Hà Nội</h2><p>Ghim vị trí theo địa chỉ của quán. Bạn có thể mở bản đồ để chỉ đường.</p><a class="small-order" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=S%E1%BB%91%20110%2C%20Ng%C3%B5%20179%20V%C4%A9nh%20H%C6%B0ng%2C%20Ho%C3%A0ng%20Mai%2C%20H%C3%A0%20N%E1%BB%99i">🗺️ Mở Google Maps</a></div>
+      <div class="map-mini"><iframe src="https://www.google.com/maps?q=S%E1%BB%91%20110%2C%20Ng%C3%B5%20179%20V%C4%A9nh%20H%C6%B0ng%2C%20Ho%C3%A0ng%20Mai%2C%20H%C3%A0%20N%E1%BB%99i&output=embed" loading="lazy" title="Bản đồ Cơm Tấm Nhà Mình"></iframe></div>
+    </div>
+  </section>
+</main>
+
+<footer class="showcase-footer">
+  <div class="footer-contact"><b>📍 Địa chỉ quán</b><span>Số 110, ngõ 179 Vĩnh Hưng, Hoàng Mai, Hà Nội</span></div>
+  <div class="footer-contact"><b>📞 Điện thoại</b><a href="tel:0904956291">0904 956 291</a></div>
+  <div class="footer-contact"><b>🕐 Giờ mở cửa</b><span>09:00 – 15:00 | 17:00 – 22:00</span></div>
+  <div class="footer-contact"><b>🗺️ Bản đồ</b><a href="#address">Xem chỉ đường</a></div>
+  <div class="footer-qr"><img src="images/qr-ngan-hang.png" alt="QR nhận tiền MB VietQR"><div><b>Thanh toán chuyển khoản</b><span>VietQR - MB</span><span>STK: 0904956291</span><span>Chủ TK: LE VAN MANH</span></div></div>
+  <div class="footer-contact"><b>📦 Theo dõi đơn hàng</b><a href="order-tracking.html">Nhập mã đơn để tra cứu</a></div>
+  <div class="footer-contact"><b>✉️ Đơn hàng</b><span>Thông tin đơn được gửi về Gmail<br><strong>taikhoanff2022@gmail.com</strong></span></div>
+</footer>
+<div class="toast" id="toast"></div>
+<script src="data.js"></script><script src="script.js"></script>
+<script>
+const categoryOrder=['Cơm','Bún','Phở','Bánh mì','Miến','Mì','Xôi','Món cuốn & chiên','Món đặc sản','Chè','Trà sữa','Trà trái cây','Đá xay','Kem','Nước giải khát'];
+const categoryLabels={'Cơm':'🍚 CƠM','Bún':'🍜 BÚN','Phở':'🍲 PHỞ','Bánh mì':'🥖 BÁNH MÌ','Miến':'🍜 MIẾN','Mì':'🍜 MÌ','Xôi':'🍚 XÔI','Món cuốn & chiên':'🥟 MÓN CUỐN & CHIÊN','Món đặc sản':'⭐ ĐẶC SẢN','Chè':'🍨 CHÈ','Trà sữa':'🧋 TRÀ SỮA','Trà trái cây':'🍓 TRÀ TRÁI CÂY','Đá xay':'🥤 ĐÁ XAY','Kem':'🍦 KEM','Nước giải khát':'🥤 NƯỚC GIẢI KHÁT'};
+const filters=document.getElementById('showcaseFilters');
+filters.innerHTML=categoryOrder.map(c=>`<button class="filter" data-cat="${c}">${categoryLabels[c]}</button>`).join('');
+const best=PRODUCTS.slice(0,9);
+renderShowcaseCards(best,document.getElementById('bestProducts'));
+let selected='all';
+function card(p){return `<article class="show-card"><div class="show-img"><img src="${p.images[0]}" alt="${p.name}" loading="lazy"></div><div class="show-body"><h3>${p.name}</h3><div class="show-price">${money(p.price)}</div><p>${p.desc}</p><button onclick="addToCart(${p.id})">🛒</button></div></article>`}
+function renderShowcaseCards(list,el){el.innerHTML=list.length?list.map(card).join(''):'<div class="empty">Không tìm thấy món phù hợp.</div>'}
+function refreshHome(){const q=(document.getElementById('showcaseSearch').value||document.getElementById('homeSearch').value).toLowerCase().trim();let list=PRODUCTS.filter(p=>(selected==='all'||p.category===selected)&&(!q||p.name.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q)));renderShowcaseGrouped(list)}
+function renderShowcaseGrouped(list){const el=document.getElementById('showcaseProducts');if(!list.length){el.innerHTML='<div class="empty">Không tìm thấy món phù hợp.</div>';return}el.innerHTML=categoryOrder.map(cat=>{const items=list.filter(p=>p.category===cat);if(!items.length)return '';return `<section class="show-category cat-${categoryOrder.indexOf(cat)+1}"><div class="show-category-head"><h2>${categoryLabels[cat]}</h2><span>${items.length} món</span></div><div class="show-category-grid">${items.map(card).join('')}</div></section>`}).join('')}
+filters.querySelectorAll('button').forEach(b=>b.onclick=()=>{filters.querySelectorAll('button').forEach(x=>x.classList.remove('active'));b.classList.add('active');selected=b.dataset.cat;refreshHome()});
+document.getElementById('showcaseSearch').addEventListener('input',refreshHome);document.getElementById('homeSearch').addEventListener('input',()=>{document.getElementById('showcaseSearch').value=document.getElementById('homeSearch').value;document.getElementById('menu-showcase').scrollIntoView({behavior:'smooth'});refreshHome()});
+refreshHome();updateCartCount();
+</script>
+</body>
+</html>

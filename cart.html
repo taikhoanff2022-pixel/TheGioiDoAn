@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Giỏ hàng | Thế Giới Đồ Ăn</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><div class="brand"><span class="brand-icon">🍚</span><div><b>Thế Giới Đồ Ăn</b><small>Ngon như cơm nhà</small></div></div>
+<nav><a href="index.html">Trang chủ</a><a href="menu.html">Thực đơn</a><a href="order-tracking.html">📦 Theo dõi đơn</a><a class="active" href="cart.html">🛒 Giỏ hàng <span id="cartCount">0</span></a></nav></header>
+<main class="container cart-page">
+  <h1>Giỏ hàng</h1>
+  <div class="cart-layout">
+    <section><div id="cartItems"></div><a href="menu.html" class="continue">← Tiếp tục chọn món</a></section>
+    <aside class="summary">
+      <h2>Tóm tắt đơn hàng</h2>
+      <label>Mã giảm giá</label><div class="voucher"><input id="voucher" placeholder="Nhập COMTAM10"><button onclick="applyVoucher()">Áp dụng</button></div>
+      <div class="sumrow"><span>Tạm tính</span><b id="subtotal">0đ</b></div>
+      <div class="sumrow"><span>Phí giao hàng</span><b id="ship">15.000đ</b></div>
+      <div class="sumrow discount"><span>Giảm giá</span><b id="discount">0đ</b></div>
+      <div class="total"><span>Tổng cộng</span><b id="total">0đ</b></div>
+      <h3>Thông tin nhận hàng</h3>
+      <input class="field" id="name" placeholder="Họ và tên">
+      <input class="field" id="phone" placeholder="Số điện thoại">
+      <input class="field" id="address" placeholder="Địa chỉ giao hàng">
+      <select class="field" id="payment"><option>💵 Thanh toán khi nhận hàng</option><option>🏦 Chuyển khoản ngân hàng</option></select>
+      <div class="qr real-qr"><img src="images/qr-ngan-hang.png" alt="QR nhận tiền MB VietQR - LE VAN MANH"><div><b>💳 Chuyển khoản ngân hàng</b><p><b>Ngân hàng:</b> MB Bank</p><p><b>Chủ tài khoản:</b> LE VAN MANH</p><p><b>Số điện thoại:</b> 0904956291</p><p>Quét mã QR để thanh toán. Nội dung chuyển khoản ghi <b>mã đơn hàng</b>.</p></div></div>
+      <button class="btn primary checkout" onclick="checkout()">Đặt hàng</button>
+    </aside>
+  </div>
+</main>
+<div class="toast" id="toast"></div>
+
+<!-- Hộp xác nhận thanh toán QR: chỉ hiện khi khách chọn chuyển khoản -->
+<div id="qrPaymentModal" class="qr-payment-modal" aria-hidden="true">
+  <div class="qr-payment-backdrop" onclick="cancelQrPayment()"></div>
+  <div class="qr-payment-dialog" role="dialog" aria-modal="true" aria-labelledby="qrPaymentTitle">
+    <button class="qr-payment-close" type="button" onclick="cancelQrPayment()" aria-label="Đóng">×</button>
+    <div class="qr-payment-icon">💳</div>
+    <h2 id="qrPaymentTitle">Thanh toán bằng QR</h2>
+    <p class="qr-payment-note">Vui lòng quét mã QR bên dưới để chuyển khoản.</p>
+    <img class="qr-payment-image" src="images/qr-ngan-hang.png" alt="QR thanh toán MB Bank - LE VAN MANH">
+    <div class="qr-payment-info">
+      <p><b>Ngân hàng:</b> MB Bank</p>
+      <p><b>Chủ tài khoản:</b> LE VAN MANH</p>
+      <p><b>Số điện thoại:</b> 0904956291</p>
+      <p><b>Nội dung:</b> Mã đơn hàng sẽ được tạo sau khi xác nhận.</p>
+    </div>
+    <div class="qr-payment-actions">
+      <button class="btn" type="button" onclick="cancelQrPayment()">Quay lại</button>
+      <button class="btn primary" type="button" onclick="confirmQrPayment()">OK - Tôi đã thanh toán</button>
+    </div>
+  </div>
+</div>
+
+<script src="data.js"></script><script src="script.js"></script><script>renderCart();</script>
+</body></html>
